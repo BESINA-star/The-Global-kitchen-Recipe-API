@@ -13,7 +13,21 @@ const getAllRecipes = async () => {
   return await Recipe.find();
 };
 
+const updateRecipe = async (id, data) => {
+  const recipe = await Recipe.findByIdAndUpdate(id, data, {
+    new: true,
+    runValidators: true
+  });
+
+  if (!recipe) {
+    throw new Error('Recipe not found');
+  }
+
+  return recipe;
+};
+
 module.exports = {
   createRecipe,
-  getAllRecipes
+  getAllRecipes,
+  updateRecipe
 };

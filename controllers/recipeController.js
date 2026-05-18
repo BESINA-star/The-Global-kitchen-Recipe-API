@@ -20,7 +20,17 @@ const getRecipes = async (req, res) => {
   }
 };
 
+const updateRecipe = async (req, res) => {
+  try {
+    const recipe = await recipeService.updateRecipe(req.params.id, req.body);
+    res.json(recipe);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
 module.exports = {
   createRecipe,
-  getRecipes
+  getRecipes,
+  updateRecipe
 };
