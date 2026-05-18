@@ -6,5 +6,5 @@ router.post('/recipes', recipeController.createRecipe);
 
 router.get('/recipes', recipeController.getRecipes);
 router.patch('/recipes/:id', recipeController.updateRecipe);
-
+router.delete('/recipes/:id', recipeController.deleteRecipe);
 module.exports = router;
