@@ -9,6 +9,11 @@ const createRecipe = async (data) => {
   return recipe;
 };
 
+const getAllRecipes = async () => {
+  return await Recipe.find();
+};
+
 module.exports = {
-  createRecipe
+  createRecipe,
+  getAllRecipes
 };
