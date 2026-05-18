@@ -8,18 +8,18 @@ dotenv.config();
 // Connect Database
 connectDB();
 
-// Initialize app FIRST
+// Initialize 
 const app = express();
 
 // Middleware
 app.use(express.json());
 
-// Routes (AFTER app is created)
+// Routes 
 app.use('/api', recipeRoutes);
 
 // Test route
 app.get('/', (req, res) => {
-  res.send('My API is working 🚀');
+  res.send('My first API');
 });
 
 const PORT = process.env.PORT || 5000;
